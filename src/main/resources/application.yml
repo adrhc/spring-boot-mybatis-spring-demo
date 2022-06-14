@@ -9,17 +9,17 @@ spring.jackson.date-format: dd.MM.yyyy HH:mm:ss
 logging:
   level:
     springframework:
-      boot: warn
       boot.autoconfigure.logging.ConditionEvaluationReportMessage: warn
+      data: debug
       core.task: debug
-      jdbc: warn
       jdbc.datasource.init.ScriptUtils: info
       scheduling.concurrent: debug
       test: warn
       web: info
     java.util.concurrent: debug
     ro.go.adrhc: debug
-  root: info
+  root: debug
 
 # datasource
-spring.datasource.url: "jdbc:h2:mem:ramdb;DB_CLOSE_DELAY=-1;MODE=MySQL;AUTOCOMMIT=OFF"
+#spring.datasource.url: "jdbc:h2:mem:ramdb;DB_CLOSE_DELAY=-1;MODE=MySQL;AUTOCOMMIT=OFF"
+spring.datasource.url: "jdbc:h2:mem:ramdb;DB_CLOSE_DELAY=-1;MODE=Oracle;AUTOCOMMIT=OFF"
