@@ -8,14 +8,19 @@ spring.jackson.date-format: dd.MM.yyyy HH:mm:ss
 # logging
 logging:
   level:
-    springframework:
-      boot.autoconfigure.logging.ConditionEvaluationReportMessage: warn
-      data: debug
-      core.task: debug
-      jdbc.datasource.init.ScriptUtils: info
-      scheduling.concurrent: debug
-      test: warn
-      web: info
+    org:
+      springframework:
+        boot.autoconfigure.logging.ConditionEvaluationReportMessage: warn
+        data: debug
+        core.task: debug
+        jdbc:
+          core:
+            JdbcTemplate: debug
+          datasource:
+            init.ScriptUtils: info
+        scheduling.concurrent: debug
+        test: warn
+        web: info
     java.util.concurrent: debug
     ro.go.adrhc: debug
   root: debug
