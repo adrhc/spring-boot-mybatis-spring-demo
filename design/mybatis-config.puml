@@ -15,11 +15,18 @@ SqlSessionFactoryBuilder --> SqlSessionFactory : creates
 SqlSessionFactory --> SqlSession : creates
 
 note left of SqlSessionFactoryBuilder
-SqlSessionFactoryBuilder can build a
-SqlSessionFactory instance from an
-**XML configuration** file, **or** from a
-custom prepared instance of the
-**Configuration class**.
+    SqlSessionFactoryBuilder can build a
+    SqlSessionFactory instance from an
+    **XML configuration** file, **or** from a
+    custom prepared instance of the
+    **Configuration class**.
+end note
+
+note left of SqlSession
+    __statement__: unique identifier
+    matching the statement to use
+    __mapKey__: the property to use as
+    key for each value in the list
 end note
 
 @enduml
