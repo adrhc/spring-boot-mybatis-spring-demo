@@ -1,0 +1,25 @@
+@startuml
+
+class SqlSessionFactoryBuilder
+interface SqlSessionFactory
+interface SqlSession {
+    + selectOne(statement, [parameter]) : T
+    + selectList(statement, [parameter], [rowBounds]) : List<E>
+    + selectMap(statement, [parameter], String mapKey, [rowBounds]) : Map<K, V>
+    + selectCursor(statement, [parameter], [rowBounds]) : Cursor<T>
+    + insert(statement, [parameter]) : int
+    + update(statement, [parameter]) : int
+}
+
+SqlSessionFactoryBuilder --> SqlSessionFactory : creates
+SqlSessionFactory --> SqlSession : creates
+
+note left of SqlSessionFactoryBuilder
+SqlSessionFactoryBuilder can build a
+SqlSessionFactory instance from an
+**XML configuration** file, **or** from a
+custom prepared instance of the
+**Configuration class**.
+end note
+
+@enduml
